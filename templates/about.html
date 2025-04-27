@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock title %}
+
+{% block content %}
+
+<div class='bg-gray-800 text-white p-6 md:px-10 lg:px-20 xl:px-40 2xl:px-72'>
+    <div class='m-6'>
+        <p style="font-family: Poppins-Bold" class='text-4xl font-extrabold py-5 text-center md:text-start'>About Me</p>
+        <p class='text-justify leading-relaxed'>
+            &#128075; Hi,<br><br>
+
+            My name is Akhil Bonthinayanivari, and I am a highly motivated and experienced Data Engineer with a passion for creating innovative solutions. I specialize in developing scalable data pipelines, working extensively with cloud platforms like AWS, Azure, and leveraging big data tools such as Apache Spark and Snowflake.<br><br>
+
+            I hold a Master's degree in Data Engineering from the University of North Texas and have hands-on experience with technologies including Python, SQL, Apache Spark, Snowflake, AWS, Azure, Databricks, and more.<br><br>
+
+            I have applied these skills to various real-world projects, such as designing predictive risk management platforms, building cloud-based ETL pipelines, and optimizing data architectures for enterprises. Check out my <a href='/projects' class='text-cyan-300 hover:underline'>projects</a> to see more details.<br><br>
+
+            I'm always eager to explore new opportunities and help businesses optimize their data strategies.
+        </p>
+
+        <div class='my-16'>
+            <p style="font-family: Poppins-Bold" class='text-4xl font-extrabold py-5 text-center md:text-start'>Academic Career</p>
+            <div class='bg-gray-900 rounded-xl p-5 shadow-lg'>
+                <ul class='list-disc list-inside leading-relaxed'>
+                    <li class="my-2"><strong>Master's in Data Engineering</strong><br><span class="text-gray-400">University of North Texas, Denton, Texas, USA</span></li>
+                    <li class="my-2"><strong>Bachelor's in Computer science And engineering</strong><br><span class="text-gray-400">MITS,Andhra pradeshss, India</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class='my-16'>
+            <p style="font-family: Poppins-Bold" class='text-4xl font-extrabold py-5 text-center md:text-start'>Skills & Expertise</p>
+            <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center py-4'>
+                <!-- Skill Cards -->
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fab fa-python text-5xl text-cyan-300"></i>
+                    <p class="mt-3 font-semibold">Python</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-database text-5xl text-blue-300"></i>
+                    <p class="mt-3 font-semibold">SQL</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fab fa-aws text-5xl text-indigo-300"></i>
+                    <p class="mt-3 font-semibold">AWS</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fab fa-microsoft text-5xl text-blue-500"></i>
+                    <p class="mt-3 font-semibold">Azure</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-snowflake text-5xl text-cyan-400"></i>
+                    <p class="mt-3 font-semibold">Snowflake</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-code-branch text-5xl text-green-300"></i>
+                    <p class="mt-3 font-semibold">ETL Pipelines</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-fire-alt text-5xl text-orange-300"></i>
+                    <p class="mt-3 font-semibold">Apache Spark</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl py-5 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-cubes text-5xl text-red-300"></i>
+                    <p class="mt-3 font-semibold">Databricks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+{% endblock %}

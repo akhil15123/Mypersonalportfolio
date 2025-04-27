@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Resume Contact{% endblock title %}
+
+{% block content %}
+<div class='bg-gray-800 text-white p-3 md:px-10 lg:px-20 xl:px-40 2xl:px-72'>
+    <p style="font-family: Poppins-Bold" class='text-4xl font-extrabold py-5 text-center md:text-start'>Contact for Resume Inquiries</p>
+
+    {% if messages %}
+    <div class="messages grid place-content-center">
+        {% for message in messages %}
+        <div{% if message.tags %} class="{{ message.tags }} bg-slate-700 py-3 px-5 mx-5 rounded-lg flex items-center justify-center text-sm md:text-base"{% endif %}>
+            <p class=''><i class="fa-regular fa-bell"></i> {{ message }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form class='flex-col p-5' action="/contact" name="contactForm" method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div class='name'>
+            <label for="name">Your Name</label><br>
+            <input class='p-3 w-full my-2 bg-gray-900 border-slate-700 rounded-lg' type="text" id="name" placeholder="Your Name" name="name" required>
+        </div>
+        <div class='email'>
+            <label for="email">Email</label><br>
+            <input class='p-3 w-full my-2 bg-gray-900 border-slate-700 rounded-lg' type="email" id="email" placeholder="Your Email" name="email" required>
+        </div>
+        <div class='phone'>
+            <label for="phone">Phone Number</label><br>
+            <input class='p-3 w-full my-2 bg-gray-900 border-slate-700 rounded-lg' type="tel" id="phone" placeholder="Your Phone Number" name="phone" required>
+        </div>
+        <div class='message'>
+            <label for="message">Message</label><br>
+            <textarea class='p-3 resize-none w-full h-72 my-2 bg-gray-900 border-slate-700 rounded-lg' placeholder="Message regarding resume or inquiries" name="message" required></textarea>
+        </div>
+        <button type="submit" class='bg-blue-600 p-2 px-4 rounded-[6px] hover:bg-gray-800 hover:outline hover:outline-blue-600 transition delay-75 ease-in-out my-3'><i class="fa-regular fa-paper-plane"></i> Send</button>
+    </form>
+
+    <!-- Resume Information Section -->
+    <div class="resume-info mt-10 bg-gray-900 p-6 rounded-lg">
+        <h2 class="text-3xl font-extrabold text-center text-blue-400">My Resume</h2>
+        <div class="mt-4 text-center">
+            <p class="text-xl text-gray-300">If you would like to learn more about my skills and experience, you can download my resume or contact me directly using the form above.</p>
+            <a href="static/downloads/Ashish-Resume.pdf" class="bg-blue-600 text-white p-2 px-4 rounded-md mt-4 hover:bg-blue-700 transition duration-300">Download My Resume</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
