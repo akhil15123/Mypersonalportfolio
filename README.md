@@ -1,5 +1,13 @@
 # Akhil's Django Portfolio and Engineering Blog
 
+
+<!-- portfolio-showcase:start -->
+<p align="center">
+  <img src="docs/showcase.svg" alt="Django Portfolio Analytics synthetic product showcase" width="100%">
+</p>
+<p align="center"><sub><strong>Portfolio preview:</strong> all names, records, metrics, and scenarios shown above are synthetic. No real user or customer data is included.</sub></p>
+<!-- portfolio-showcase:end -->
+
 [![Django CI](https://github.com/akhil15123/Mypersonalportfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/akhil15123/Mypersonalportfolio/actions/workflows/ci.yml)
 
 A Python/Django portfolio and technical blog for presenting AI, data-engineering, and software projects. It includes database-backed posts, categories, search, project pages, documentation links, and a configurable contact workflow.
