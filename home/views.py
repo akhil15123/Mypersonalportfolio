@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.core.paginator import Paginator
 from home.models import Blog
 import random
@@ -33,7 +34,8 @@ def index(request):
 
     # Fetch random 3 blogs for the homepage
     blogs = Blog.objects.all()
-    random_blogs = random.sample(list(blogs), 3)
+    blog_list = list(blogs)
+    random_blogs = random.sample(blog_list, min(3, len(blog_list)))
 
     # Pass the data to the template for rendering
     context = {'random_blogs': random_blogs, 'page_obj': page_obj}
@@ -81,7 +83,12 @@ def contact(request):
                 Email:\n\t\t{}\n
                 Phone:\n\t\t{}\n
                 '''.format(form_data['name'], form_data['message'], form_data['email'], form_data['phone'])
-                send_mail('You got a mail!', email_message, '', ['dev.ash.py@gmail.com'])
+                send_mail(
+                    'Portfolio contact',
+                    email_message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [settings.CONTACT_RECIPIENT],
+                )
                 messages.success(request, 'Your message was sent.')
             else:
                 messages.error(request, 'Email or Phone is Invalid!')
@@ -124,7 +131,7 @@ def categories(request):
 
 # Search page view (search blog posts based on query)
 def search(request):
-    query = request.GET.get('q')  # Get the search query
+    query = request.GET.get('q', '').strip()  # Get the search query
     query_list = query.split()  # Split query into words
     results = Blog.objects.none()  # Start with an empty result set
     for word in query_list:
